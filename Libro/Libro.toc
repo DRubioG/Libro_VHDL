@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{\numberline {0.0.1}Librerías}{5}{}%
+\contentsline {subsection}{\numberline {0.0.2}Entity}{5}{}%
+\contentsline {subsubsection}{Generic}{5}{}%
+\contentsline {subsubsection}{Port}{5}{}%
+\contentsline {subsection}{\numberline {0.0.3}Architecture}{6}{}%
+\contentsline {subsection}{\numberline {0.0.4}Tipos}{7}{}%
+\contentsline {section}{\numberline {0.1}Documentación}{8}{}%

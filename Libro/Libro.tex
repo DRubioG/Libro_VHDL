@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % Configura el idioma y cambia "Contents" por "Índice"
+\usepackage{parskip}
+
+\title{Mi primer documento}
+\author{Autor}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    {\Huge \textbf{Título del Libro}} \\[0.5cm]
+    {\Large Subtítulo o descripción}
+    
+    \vspace{2cm}
+    % Aquí puedes insertar una imagen o logotipo
+    % \includegraphics[width=0.4\textwidth]{imagen.png}
+    
+    \vfill
+    
+    {\Large Autor/a} \\[0.5cm]
+    {\large Nombre de la Editorial o Institución}
+    
+    \vspace{1cm}
+    {\large \today}
+\end{titlepage}
+
+
+
+
+% --- CONFIGURACIÓN DE PÁGINAS INICIALES ---
+\frontmatter % En la clase 'book', esto pone la numeración en romanos (i, ii, iii...)
+
+% --- ÍNDICE ---
+\tableofcontents
+\clearpage % Salto de página limpio después del índice
+
+% --- CUERPO DEL LIBRO ---
+\mainmatter % Esto reinicia la numeración en números arábigos (1, 2, 3...) desde el Capítulo 1
+
+
+
+
+
+% Introducción
+\include{Capitulos/introduccion.tex}
+
+% VHDL
+\include{Capitulos/VHDL_base.tex}
+
+\include{Capitulos/estructuras_VHDL.tex}
+
+% Tipos
+\include{Capitulos/tipos.tex}
+
+% Estructuras
+
+% FSM
+
+
+% Transceivers
+
+% Documentación
+\include{Documentacion/Documentacion.tex}
+
+% Ejemplos
+
+% Anexo
+
+\end{document}

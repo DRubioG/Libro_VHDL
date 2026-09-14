@@ -1,0 +1,103 @@
+\section*{Estructuras VHDL}
+
+Un proyecto en VHDL se estructura de la siguiente forma.
+
+Un proyecto en VHDL se estructura en 3 partes: 
+\begin{enumerate}
+    \item Importar las librerías.
+    
+        Todos los proyectos en VHDL incoran diferentes librerías para poder
+        utilizar los tipos.
+
+    \item Definición de puertos y genéricos.
+    
+        En este apartado se definen dos cosas: los génericos y los puertos.
+        Los genéricos son constantes utilizadas para escalar los módulos en VHDL.
+        \begin{quotation}
+            \noindent Los genéricos en muchos casos son utilizados como constantes generales como en 
+            otros lenguajes.
+            Esto es un problema que a la larga genera problemas de escalabilidad.
+        \end{quotation}
+
+    \item Definición de la arquitectura.
+    
+        Dentro de la arquitectura se define la operatibidad del módulo FW
+    
+
+\end{enumerate}
+
+
+
+\begin{verbatim}
+    library ieee;
+    use ieee.std_logic_1164.all;
+
+    entity modulo is
+        generic(
+
+        );
+        port(
+
+        );
+    end entity;
+
+    architecture arch_modulo of modulo is
+
+    begin
+
+    end architecture;
+\end{verbatim}
+
+\subsection{Librerías}
+Las librarías en VHDL incorporan los elementos necesarios para poder utilizar el FW.
+    \begin{verbatim}
+        librarie ieee;
+        use ieee.std_logic_1164.all;
+    \end{verbatim}
+Para incluir librerías propias se incorporan utilizando la librería \textit{work}.
+    \begin{verbatim}
+        use work.package.all;
+    \end{verbatim}
+
+Los fabricantes de FPGAs o de ASICs suelen crear sus propias
+librerías para acceder a recursos propios, 
+como por ejemplo la librería \textit{UNISIM} de Xilinx(AMD).
+
+
+\subsection{Entity}
+En la entidad se compone de dos partes.
+
+\subsubsection{Generic}
+
+
+    \begin{verbatim}
+        generic(
+            G_WIDTH  : integer := 8;
+            G_DATA  : integer range 0 to 10 := 8;
+            G_TEXT : string := "YES"
+        );
+    \end{verbatim}
+
+\subsubsection{Port}
+En este apartado se definen los puertos del módulo que tienen señales de entrada, 
+salida o bidereccionales.
+
+Entre estos puertos suelen incorporar puertos de reloj, de reset o de habilitación.
+
+    \begin{quote}
+        Los puertos de reset de normal son activos a nivel bajo ('0').
+    \end{quote}
+
+    \begin{verbatim}
+        port(
+            PUERTO_A_I  : in std_logic;
+            PUERTO_B_O  : out std_logic_vector(G_WIDTH-1 downto 0);
+            PUERTO_C_IO : inout std_logic
+        );
+    \end{verbatim}
+
+
+
+\subsection{Architecture}
+
+La arquitectura define el comportamiento interno del FW.
